@@ -1,0 +1,15 @@
+{
+  "id": "44",
+  "name": "Key Management: Document concrete procedures for managing keys through the lifecycle",
+  "description": "<p>Key backup and recovery is a big part of a Crypto Foundation. You need a way to restore keys if key storage is compromised. Without that backup plan, you may not be able to access encrypted data. Keep backup key copies in a secure storage mechanism, to efficiently restore keys and encrypt or re-encrypt data on a new key. The best practice is to use an offline storage container, like a FIPS validated card, appliance or token. Document concrete processes for handling key compromise.\n</p><p /><div>Document and implement procedures to protect keys used to secure stored cardholder data against disclosure and misuse.</div><div><br /></div><div> \n</div><div>\n</div><div>Cryptographic key management encompasses the entire lifecycle of cryptographic keys and other keying material. A single item of keying material (e.g., a key) has several states during its life, though some of these states may, in fact, be very short:</div><ul><li>Pre-operational: The keying material is not yet available for normal cryptographic operations.\n</li><li>Operational: The keying material is available and in normal use.\n</li><li>Post-operational: The keying material is no longer in normal use, but access to the material is possible.\n</li><li>Obsolete/destroyed: The keying material is no longer available. All records of its existence may have been deleted.</li></ul><p>The next view graph identifies the subsections that discuss various stages of key management for a given entity. </p><p>This information can be saved in companies servers or on the cloud which are protected well enough in order misue the access of any sensitive information of the users. \n</p><p><b>\nGeneral Protection Methods </b></p><ul><li>Confidentiality\n</li><li>Integrity\n</li><li>Association with Usage or Application\n</li><li>Association with the Other Entity\n</li><li>Long Term Availability\n</li><li>Association with Other Information </li></ul><p>Please follow the link below for details of the above Protection Methods:</p><p><a href=\"https://csrc.nist.gov/csrc/media/events/key-management-workshop-2001/documents/lifecycle-slides.pdf\" target=\"_blank\">https://csrc.nist.gov/csrc/media/events/key-management-workshop-2001/documents/lifecycle-slides.pdf</a></p><p><b>Resource:</b><br /></p><p><a target=\"_blank\" href=\"https://www.gmv.com/DocumentosPDF/checker/ATMIA_Software_Security_Best_Practices.pdf\">https://www.gmv.com/DocumentosPDF/checker/ATMIA_Software_Security_Best_Practices.pdf</a></p><p><br /></p><p><br /></p><p>\n</p>",
+  "labels": "ThreatModeler,AppSec and InfraSec,Key Management Server,TM-129",
+  "libraryId": "1",
+  "isHidden": false,
+  "guid": "32248587-4dea-4e3a-afe2-1a1a15f2e1c5",
+  "riskId": 1,
+  "isCompensatingControl": false,
+  "riskName": "Very High",
+  "isReadOnlyLibraryEntity": false,
+  "lastUpdated": "2020-10-02T16:18:46.187",
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
