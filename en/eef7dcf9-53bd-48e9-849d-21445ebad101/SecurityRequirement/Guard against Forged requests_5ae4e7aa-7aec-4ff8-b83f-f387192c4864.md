@@ -1,0 +1,15 @@
+{
+  "id": "163",
+  "name": "Guard against Forged requests",
+  "description": "<p>Ensure that server side code can differentiate between legitimate requests and forged requests. The solution is similar to protection against Cross Site Request Forger (CSRF), which is to use a hard to guess random nonce (that is unique to the victim session with the server) that the attacker has no way of knowing (at least in the absence of other weaknesses). Each request from the client to the server should contain this nonce and the server should reject all requests that do not contain the nonce.</p><p>CSRF Protector Project has two parts:</p><p>Apache 2.x.x Module: An Apache Module which can be easily installed and configured in an Apache Server to protect it from CSRF vulnerabilities.</p><p>PHP library: A standalone PHP library that can be integrated with any existing web application or used while creating a new PHP project. All developers need to do is include the library and call the initiating function CSRF Protection provide protection for:</p><ul><li>Normal HTML forms (POST/GET)</li><li>Normal Get requests (Not enabled by default)</li><li>Ajax Requests (XHR)</li><li>Dynamically generated forms</li></ul><p><br /></p><p><b>How to use:</b></p><p>CSRFP can be easily used to create a new web application or integrated with existing one! Here is step by step guide on integrating CSRFP with an existing web application in php, similar logic will apply while creating a new one.</p><p>Step 1 - Download and place the library in appropriate location<br /></p><p>You can download the library's latest release from here</p><p>Now let us assume you have downloaded and placed the library in root directory of your web application. We are also assuming that you have an index.php file.</p><p>Step 2 - Include the library at the beginning of the file</p><p>You'd definitely want to include the library at the beginning of the php file, as CSRFP behaves like an interceptor, you'd want CSRFP logic be implemented before any web application logic. So include the library like:</p><p>&lt;?php</p><p>include_once __DIR__ .'/libs/csrf/csrfprotector.php';</p><p>Step 3 - Call the init() function</p><p>Now that you have included the library only task left is to activate it in your page. In the simplest form you can call the library like</p><p>include_once __DIR__ .'/libs/csrf/csrfprotector.php';</p><p>//Initialise CSRFGuard library</p><p>csrfProtector::init();</p><p>This will cause library to pick up configurations from the config file and perform the validation and modification. </p><p> </p>",
+  "labels": "ThreatModeler,AppSec and InfraSec,Web Application,Web Service,App,Native Application,TM-223,Third Party Web Service,Forgot Password",
+  "libraryId": "1",
+  "isHidden": false,
+  "guid": "5ae4e7aa-7aec-4ff8-b83f-f387192c4864",
+  "riskId": 2,
+  "isCompensatingControl": false,
+  "riskName": "High",
+  "isReadOnlyLibraryEntity": false,
+  "lastUpdated": "2021-12-16T21:48:42.127",
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
