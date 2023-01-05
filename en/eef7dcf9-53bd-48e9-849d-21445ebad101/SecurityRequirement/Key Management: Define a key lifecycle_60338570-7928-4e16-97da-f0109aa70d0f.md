@@ -1,0 +1,15 @@
+{
+  "id": "40",
+  "name": "Key Management: Define a key lifecycle",
+  "description": "<p>Key lifecycle management refers to the creation and retirement of cryptographic keys. This is commonly referred to as “key rollover.” A newly generated key is often stored in the key repository along with the old keys. Since placing a key in a distributed repository is not an atomic operation, the new cryptographic key initially becomes available only to a subset of domain controllers. Depending on the repository’s replication policy, the key is eventually replicated to the remaining domain controllers over a period of time. </p><p>Data protected by the new key may not be usable by all clients until the new key replicates throughout the repository. For example, this may happen if the protected data is stored in a highly available cloud storage that is independent of the key repository. Our system activates a new key (starts using it) only sometime after it is created in order to mitigate this problem. </p><p>The key lifecycle details the various states that a key will move through during its life. The lifecycle will specify when a key should no longer be used for encryption, when a key should no longer be used for decryption (these are not necessarily coincident), whether data must be rekeyed when a new key is introduced, and when a key should be removed from use all together.</p><p><b>We can implement in six states that a key goes through in its lifecycle:</b><br /></p><p>1. Creation. A key object is created on at least one domain controller, but its attributes (such as key value) are not set.</p><p>2. Initialization. The key object has all its core key attributes set on at least one domain controller.</p><p>3. Full Distribution. An initialized key is available to all domain controllers.</p><p>4. Active. An initialized key is available for all cryptographic operations on at least one domain controller.</p><p>5. Inactive. An initialized key is unavailable for some cryptographic operations on all domain controllers.</p><p>6. Termination. An initialized key is permanently deleted from all domain controllers </p><p>Resource:</p><p><a href=\"https://www.microsoft.com/en-us/research/wp-content/uploads/2010/06/Distributed-Key-Lifecycle-Management.pdf\" target=\"_blank\">https://www.microsoft.com/en-us/research/wp-content/uploads/2010/06/Distributed-Key-Lifecycle-Management.pdf</a></p><p><br /></p>",
+  "labels": "ThreatModeler,AppSec and InfraSec,Key Management Server,TM-231",
+  "libraryId": "1",
+  "isHidden": false,
+  "guid": "60338570-7928-4e16-97da-f0109aa70d0f",
+  "riskId": 1,
+  "isCompensatingControl": false,
+  "riskName": "Very High",
+  "isReadOnlyLibraryEntity": false,
+  "lastUpdated": "2021-09-29T15:34:56.493",
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
