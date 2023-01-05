@@ -1,0 +1,15 @@
+{
+  "id": "127",
+  "name": "Strong Mutual Authentication",
+  "description": "<p>Mutual authentication, also called two-way authentication, is a process or technology in which both entities in a communications link authenticate each other. In a network environment, the client authenticates the server and vice-versa. In this way, network users can be assured that they are doing business exclusively with legitimate entities and servers can be certain that all would-be users are attempting to gain access for legitimate purposes.</p><p>Mutual authentication is gaining acceptance as a tool that can minimize the risk of online fraud in e-commerce. With mutual authentication, a connection can occur only when the client trusts the server's digital certificate and the server trusts the client's certificate. The exchange of certificates is carried out by means of the Transport Layer Security (TLS) protocol. If the client's keystore contains more than one certificate, the certificate with the latest timestamp is used to authenticate the client to the server. This process reduces the risk that an unsuspecting network user will inadvertently reveal security information to a malicious or insecure Web site.</p><p><br /></p><p>Use Strong mutual authentication to always fully authenticate both ends of any communications channel.</p><p>Strong Mutual Authentication can be done using OAuth 2.0 authentication. The OAuth 2.0 Authorization Framework allows the use of additional client authentication mechanisms. One such is the mechanism of client authentication utilizing mutual TLS certificate-based authentication which provides better security characteristics than shared secrets. In order to utilize TLS for OAuth client authentication, the TLS connection between the client and the authorization server must have been established with mutual X.509 certificate authentication (i.e. the Client Certificate and Certificate Verify messages are sent during the TLS Handshake).</p><p>The specification defines two ways of binding a certificate to a client as two distinct client authentication methods.</p><p>1. PKI Mutual TLS OAuth Client Authentication Method</p><p>2. Self-Signed Certificate Mutual TLS OAuth Client Authentication Method</p><p><br /></p><p><b>Reference:</b></p><p><a href=\"https://medium.com/@technospace/mutual-tls-for-oauth-client-authentication-cdd595d4dcac\" target=\"_blank\">https://medium.com/@technospace/mutual-tls-for-oauth-client-authentication-cdd595d4dcac</a></p><p><a href=\"https://www.linkedin.com/feed/news/heres-whos-hiring-right-now-4525187/\" target=\"_blank\">https://www.linkedin.com/feed/news/heres-whos-hiring-right-now-4525187/</a></p>",
+  "labels": "ThreatModeler,AppSec and InfraSec,Web Server,Host,Thick Client,Web Service,Web Application,TM-559",
+  "libraryId": "1",
+  "isHidden": false,
+  "guid": "e2ee9e22-1bb1-431e-a738-7536d764f85a",
+  "riskId": 2,
+  "isCompensatingControl": false,
+  "riskName": "High",
+  "isReadOnlyLibraryEntity": false,
+  "lastUpdated": "2021-09-29T15:34:56.6",
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
