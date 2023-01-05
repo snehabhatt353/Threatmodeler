@@ -1,0 +1,15 @@
+{
+  "id": "193",
+  "name": "Failsafe Coding",
+  "description": "<p><b>Fail Securely</b><br><br>Handling errors securely is a key aspect of secure coding. There are two types of errors that deserve special attention.<br><br><b>The</b> <b>first</b> is exceptions that occur in the processing of a security control itself. It’s important that these exceptions do not enable behavior that the countermeasure would normally not allow. As a developer, you should consider that there are generally three possible outcomes from a security mechanism:</p><ul><li>allow the operation</li><li>disallow the operation</li><li>exception<br></li></ul><p>In general, you should design your security mechanism so that a failure will follow the same execution path as disallowing the operation. For example, security methods like isAuthorized(), isAuthenticated(), and validate() should all return false if there is an exception during processing. If security controls can throw exceptions, they must be very clear about exactly what that condition means.<br><br>The other type of security-relevant exception is in code that is not part of a security control. These exceptions are security-relevant if they affect whether the application properly invokes the control.<br><br>An exception might cause a security method not to be invoked when it should, or it might affect the initialization of variables used in the security control.</p><p><br><b>Examples</b><br>isAdmin<br><br>isAdmin = true; <br>try { <br>&nbsp; codeWhichMayFail(); <br>&nbsp; isAdmin = isUserInRole( “Administrator” ); <br>}<br>catch (Exception ex)<br>{<br>&nbsp; log.write(ex.toString()); <br>} <br><br>If codeWhichMayFail() fails, the user is an admin by default. This is obviously a security risk. The fix is simple, in this case. It involves a simple reversing of the logic. In the example instance, this is very easy to do.<br><br>isAdmin = false;<br>try {<br>&nbsp; codeWhichMayFail();<br>&nbsp; isAdmin = isUserInrole( \"Administrator\" );<br>}<br>catch (Exception ex)<br>{<br>&nbsp; log.write(ex.toString());<br>}<br><br>This example is also an example of the Least privilege principle, which states you should never grant more access than required. If codeWhichmayFail() requires admin access, we should be verifying that admin access before we run that code.</p>",
+  "labels": "ThreatModeler,AppSec and InfraSec,Web Application,Web Service,ACH Transfer,Transfer Fund,Wire Transfer,Login,Registration,Forgot Password,Change Password,Native Application,App,Thick Client,TM-592",
+  "libraryId": "1",
+  "isHidden": false,
+  "guid": "f28195ee-be96-43b5-925f-0a9056deb98d",
+  "riskId": 2,
+  "isCompensatingControl": false,
+  "riskName": "High",
+  "isReadOnlyLibraryEntity": false,
+  "lastUpdated": "2020-09-22T13:26:50.077",
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
