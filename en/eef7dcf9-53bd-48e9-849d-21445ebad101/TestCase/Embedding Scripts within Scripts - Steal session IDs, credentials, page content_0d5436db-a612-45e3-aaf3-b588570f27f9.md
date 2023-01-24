@@ -1,0 +1,11 @@
+{
+  "id": "137",
+  "name": "Embedding Scripts within Scripts - Steal session IDs, credentials, page content",
+  "description": "As the attacker succeeds in exploiting the vulnerability, he can choose to steal user's credentials in order to reuse or to analyze them later on.\nAttack Step Techniques\nID\tAttack Step Technique Description\tEnvironments\n1\t\nDevelop malicious JavaScript that is injected through vectors identified during the Experiment Phase and loaded by the victim's browser and sends document information to the attacker.\nenv-Web\n2\t\nDevelop malicious JavaScript that injected through vectors identified during the Experiment Phase and takes commands from an attacker's server and then causes the browser to execute appropriately.\nenv-Web\nOutcomes\nID\tType\tOutcome Description\n1\tSuccess\t\nThe attacker gets the user's cookies or other session identifiers.\n2\tSuccess\t\nThe attacker gets the content of the page the user is viewing.\n3\tSuccess\t\nThe attacker causes the user's browser to visit a page with malicious content.\nSecurity Controls\nID\tType\tSecurity Control Description\n1\tDetective\t\nMonitor server logs for scripting parameters.\n2\tDetective\t\nMonitor server logs for referrers. If users are being tricked into clicking XSS links through forums or other web postings, their web browsers will be providing Referrer headers most of the time. These can help indicate that the actual request is illegitimate.\n3\tPreventative\t\nApply appropriate input validation to filter all user-controllable input of scripting syntax\n4\tPreventative\t\nAppropriately encode all browser output to avoid scripting syntax\n5\tPreventative\t\nActively monitor the application and either deny or redirect requests from origins that appear to be generating XSS probes.\n\nReference: https://capec.mitre.org/data/definitions/19.html",
+  "labels": "CAPEC",
+  "libraryId": "1",
+  "guid": "0d5436db-a612-45e3-aaf3-b588570f27f9",
+  "isHidden": false,
+  "isReadOnlyLibraryEntity": false,
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
