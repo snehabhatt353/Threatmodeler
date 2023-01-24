@@ -1,0 +1,11 @@
+{
+  "id": "132",
+  "name": "Redirect Access to Libraries - Identify target general susceptibility",
+  "description": "An attacker uses an automated tool or manually finds whether the target application uses dynamically linked libraries and the configuration file or look up table (such as Procedure Linkage Table) which contains the entries for dynamically linked libraries.\nAttack Step Techniques:\n1\tThe attacker uses a tool such as the OSX \"otool\" utility or manually probes whether the target application uses dynamically linked libraries.\nenv-Local\n2\tThe attacker finds the configuration files containing the entries to the dynamically linked libraries and modifies the entries to point to the malicious libraries the attacker crafted.\nenv-Local\n\nIndicators:\n1\tPositive\t\nThe target application uses dynamically linked libraries.\nenv-Local\n2\tPositive\t\nThe attacker can redirect or control access to files in areas leveraged by the target.\nenv-Local\n3\tPositive\t\nThe attacker can modify the entries in the configuration files to the libraries the attacker crafted.\nenv-Local\n4\tInconclusive\t\nThe attacker cannot modify the configuration files entries. The attacker may still be able to redirect access to libraries using other techniques such as using symbolic links.\nenv-Local\n5\tNegative\t\nThe application does not use dynamically linked libraries.\nenv-Local\n\nOutcomes:\n1\tSuccess\t\nThe attacker can successfully redirect or control access to libraries leveraged by the target.\n2\tSuccess\t\nThe attacker identifies and gains control of the configuration file containing entries of a list of dynamically linked libraries and be able to modify the entry to point to the malicious libraries the attacker created.\n\nSecurity Controls:\n1\tPreventative\t\nRestrict the permission to modify the entries in the configuration file.\n\nReference: https://capec.mitre.org/data/definitions/159.html",
+  "labels": "CAPEC",
+  "libraryId": "1",
+  "guid": "9e3c3c01-f013-4fb4-9fd0-280e7a81a3cc",
+  "isHidden": false,
+  "isReadOnlyLibraryEntity": false,
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
