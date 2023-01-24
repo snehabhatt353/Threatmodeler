@@ -1,0 +1,11 @@
+{
+  "id": "40",
+  "name": "SOAP: Malformed XML",
+  "description": "This one is fun; try different variations of the elements in the request:\n\n<login>\n  <user_name> eviware</username>\n  <pass_word> s0ApU1R0ck5</password>\n</login>\n\nor like this:\n\n<login>\n  <user> eviware</username>\n  <pass> s0ApU1R0ck5</password>\n</login>\n\nYou might be surprised by the answer:\n\n<loginresponse>\n  <errror>element username is expected.</error>\n</loginresponse>\n\nalso, send requests where the end elements afre missing\n\n<login>\n  <username>eviware<username>\n  <pass> s0ApU1R0ck5</password>\n</login>\n\nand the opposite; requests with missing start elements:\n\n<login>\n<user> eviware</username>\n  s0ApU1R0ck5</password>\n</login>\n\nSomething to also malform is the namespaces. Let's look at how the pseudo code we've been using earlier actually would look:\n\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:demo=\"http://demo.eviware.com\">\n  <soapenv:Header/>\n    <soapenv:Body>\n    <demo :login>\n      <demo:username> eviware</demo:username>\n      <demo:password> s0ApU1R0ck5</demo:password>\n    <demo :/login>  \n  </soapenv:Body>\n</soapenv:Envelope>\n\nNow, let's change omit one of the name spaces:\n\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:demo=\"http://demo.eviware.com\">\n  <soapenv:Header/>\n    <soapenv:Body>\n    <demo :login>\n      <username> eviware</demo:username>\n      <demo:password> s0ApU1R0ck5</demo:password>\n    <demo :/login>  \n  </soapenv:Body>\n</soapenv:Envelope>\n\nas well as the reference to the namespace and have one quote to many\n\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\">\n  <soapenv:Header/>\n    <soapenv:Body>\n    <demo :login>\n      <username> eviware</demo:username>\n      <demo:password> s0ApU1R0ck5</demo:password>\n    <demo :/login>  \n  </soapenv:Body>\n</soapenv:Envelope>",
+  "labels": "",
+  "libraryId": "1",
+  "guid": "a9a79a78-c960-4ae4-a033-cc720c812d94",
+  "isHidden": false,
+  "isReadOnlyLibraryEntity": false,
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
