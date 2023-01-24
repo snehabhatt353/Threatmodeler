@@ -1,0 +1,11 @@
+{
+  "id": "46",
+  "name": "Authentication - Cached Pages",
+  "description": "Logging out from an application obviously does not clear the browser cache of any sensitive information that might have been stored. Therefore, another test that is to be performed is to check that our application does not leak any critical data into the browser cache. In order to do that, we can use WebScarab and search through the server responses that belong to our session, checking that for every page that contains sensitive information the server instructed the browser not to cache any data. Such a directive can be issued in the HTTP response headers: \n\nHTTP/1.1:\nCache-Control: no-cache\n\n\nHTTP/1.0:\nPragma: no-cache\nExpires: <past date or illegal value (e.g., 0)>\n\n\nAlternatively, the same effect can be obtained directly at the HTML level, including in each page that contains sensitive data the following code: \n\nHTTP/1.1:\n<META HTTP-EQUIV=\"Cache-Control\" CONTENT=\"no-cache\">\n\nHTTP/1.0: \n<META HTTP-EQUIV=\"Pragma\" CONTENT=\"no-cache\">\n<META HTTP-EQUIV=”Expires” CONTENT=”Sat, 01-Jan-2000 00:00:00 GMT”>\n\n\nFor instance, if we are testing an e-commerce application, we should look for all pages that contain a credit card number or some other financial information, and check that all those pages enforce the no-cache directive. On the other hand, if we find pages that contain critical information but that fail to instruct the browser not to cache their content, we know that sensitive information will be stored on the disk, and we can double-check that simply by looking for it in the browser cache. The exact location where that information is stored depends on the client operating system and on the browser that has been used. Here are some examples:\n\n    Mozilla Firefox:\n        Unix/Linux: ~/.mozilla/firefox/<profile-id>/Cache/\n        Windows: C:\\Documents and Settings\\<user_name>\\Local Settings\\Application Data\\Mozilla\\Firefox\\Profiles\\<profile-id>\\Cache> \n\n    Internet Explorer:\n        C:\\Documents and Settings\\<user_name>\\Local Settings\\Temporary Internet Files> ",
+  "labels": "",
+  "libraryId": "1",
+  "guid": "23ef7870-33f2-49e1-9689-8c421cf5c877",
+  "isHidden": false,
+  "isReadOnlyLibraryEntity": false,
+  "libraryGuid": "eef7dcf9-53bd-48e9-849d-21445ebad101"
+}
